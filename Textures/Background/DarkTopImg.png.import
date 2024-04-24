@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/DarkTopImg.png-edf0118e7caed338bda4f7765bd6dbdb.image"
+
+[deps]
+
+source_file="res://Textures/Background/DarkTopImg.png"
+dest_files=[ "res://.import/DarkTopImg.png-edf0118e7caed338bda4f7765bd6dbdb.image" ]
+
+[params]
+
