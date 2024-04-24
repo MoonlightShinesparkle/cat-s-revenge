@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CalmNight.wav-5d9f6f3b76a5aa2c45854e2b51a432e5.sample"
+
+[deps]
+
+source_file="res://Music/Songs/CalmNight.wav"
+dest_files=[ "res://.import/CalmNight.wav-5d9f6f3b76a5aa2c45854e2b51a432e5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
