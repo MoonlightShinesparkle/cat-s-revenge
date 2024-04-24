@@ -1,0 +1,47 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Textures/Magic/5.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Magic/8.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Magic/2.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Magic/3.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Magic/9.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Magic/1.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Magic/4.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Magic/6.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Magic/7.png" type="Texture" id=9]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+void fragment(){
+	vec2 Size = TEXTURE_PIXEL_SIZE;
+	vec2 PixelSource = floor(UV/Size + 0.499);
+	vec2 Edge = PixelSource * TEXTURE_PIXEL_SIZE * fwidth(UV);
+	vec2 Pixel = UV * fwidth(UV);
+	vec2 Factor = clamp(Pixel - Edge + 0.5,0.0,1.0);
+	vec2 Final = mix(PixelSource - 1.0,PixelSource,Factor)*TEXTURE_PIXEL_SIZE;
+	
+	float N = mod(fract(sin(dot(TEXTURE_PIXEL_SIZE.xy,vec2(12.9898*Final.x,78.233*Final.y))))* 43758.5453,1);
+	COLOR = texture(TEXTURE,Final);
+	if (N<0.9){
+		COLOR.r += 20.0*N/255.0;
+		COLOR.g += 20.0*N/255.0;
+		COLOR.b += 20.0*N/255.0;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="Magic" type="AnimatedSprite"]
+material = SubResource( 2 )
+frames = SubResource( 3 )

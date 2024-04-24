@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, -1.62492, 0, 0, Vector2( 0.5, 0.560954 ), -2.85315, -2.85315, 0, 0, Vector2( 1, 0 ), -0.0163428, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.517647, 0, 1, 1, 0.443137, 0, 0.882353, 1 )
+
+[node name="Destroying" type="CPUParticles2D"]
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 19.79
+spread = 66.47
+angular_velocity = 118.9
+angular_velocity_random = 1.0
+radial_accel = 30.0
+radial_accel_random = 0.34
+angle = 30.5
+angle_random = 1.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 1 )

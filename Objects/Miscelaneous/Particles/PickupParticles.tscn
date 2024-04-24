@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.490196, 1 ), 5.93918, -5.68062, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emission_shape = 1
+emission_sphere_radius = 22.14
+gravity = Vector2( 0, 0 )
+angle = 26.6
+angle_random = 1.0
+scale_amount = 3.0
+scale_amount_random = 0.36
+scale_amount_curve = SubResource( 1 )
+color = Color( 0.972549, 1, 0.113725, 1 )
